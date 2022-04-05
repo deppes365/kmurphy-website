@@ -9,17 +9,17 @@ function Header({ setContactFormOpen }) {
 				</div>
 				<ul className="navLinks">
 					<li>
-						<a className="navLink" href="">
+						<a className="navLink" href="#">
 							Home
 						</a>
 					</li>
 					<li>
-						<a className="navLink" href="">
+						<a className="navLink" href="#">
 							About
 						</a>
 					</li>
 					<li>
-						<a className="navLink" href="">
+						<a className="navLink" href="#">
 							Services
 						</a>
 					</li>
