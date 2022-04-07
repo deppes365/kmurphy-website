@@ -7,7 +7,7 @@ $silver-chalice: #ACAFAC;
 .App {
   width: 100%;
   position: relative;
-  
+  background-color: $silver-chalice;
 
   .container {
     width: 100%;
@@ -36,8 +36,15 @@ $silver-chalice: #ACAFAC;
       }
     }
 
+    .navContainer {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
     .navLinks {
-      width: 50%;
+      width: 80%;
       list-style: none;
       display: flex;
       justify-content: space-between;
@@ -47,11 +54,17 @@ $silver-chalice: #ACAFAC;
         text-decoration: none;
         color: black;
         display: inline-block;
+        color: white;
+        font-size: 1.1rem;
+
+        &.active {
+          color:#265054
+        }
       }
 
       .contact-btn {
         display: inline-block;
-        background-color: #383838;
+        background-color: $midnight-green-eagle;
         color: white;
         padding: 0.25rem 0.5rem;
         transition: 0.2s ease;
@@ -133,32 +146,7 @@ $silver-chalice: #ACAFAC;
       height: calc(100vh - 3.5rem);
       display: flex;
 
-      div {
-        width: 25%;
-        height: calc(100vh - 3.5rem);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .old-mauve {
-        background-color: $old-mauve;
-        color: white;
-      }
-
-      .dark-slate-gray {
-        background-color: $dark-slate-gray;
-        color: white;
-      }
-
-      .midnight-green-eagle {
-        background-color: $midnight-green-eagle;
-        color: white;
-      }
-
-      .silver-chalice {
-        background-color: $silver-chalice;
-      }
+      
     }
   }
 
@@ -182,16 +170,18 @@ $silver-chalice: #ACAFAC;
       visibility: visible;
     }
 
-    .form {
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
+    .contactContent {
+      background-color: $silver-chalice;
       width: 100%;
-      max-width: 1300px;
+      max-width: 1000px;
+      margin: 0 1rem;
+      border-radius: 30px;
+      height: 75%;
+      display: flex;
+      align-items: center;
       position: relative;
-      border-radius: 20px;
       overflow: hidden;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 
       .closeBtn {
         display: inline-block;
@@ -199,15 +189,90 @@ $silver-chalice: #ACAFAC;
         top: 0;
         right: 0;
         background-color: transparent;
-        color: black;
+        color: $dark-slate-gray;
         border: 0;
         font-size: 2rem;
-        padding: 0.5rem;
+        padding: 1rem;
         cursor: pointer;
         transition: 0.2s ease;
 
         &:hover {
           transform: scale(1.1);
+        }
+      }
+    }
+
+    .form {
+      flex-basis: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      background-color: $dark-slate-gray;
+
+
+      input {
+        border-radius: 15px;
+        height: 1.75rem;
+        padding: 0 0.5rem;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      textarea {
+        border-radius: 15px;
+        padding: 0.5rem;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      button {
+        font-family: 'Poppins', sans-serif;
+        width: 5rem;
+        height: 2rem;
+        border-radius: 15px;
+        margin: 0 auto;
+        border: 0;
+      }
+    }
+
+    .contactInfo {
+      flex-basis: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      padding: 3rem 2rem 2rem;
+
+      .imgContainer {
+        width: 13rem;
+        height: 13rem;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+        border: 7px solid $dark-slate-gray;
+        margin-bottom: 2rem;
+
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .contactDiv {
+        width: auto;
+        min-width: 15rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        p {
+          margin-left: 1rem;
         }
       }
     }
