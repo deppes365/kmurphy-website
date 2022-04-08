@@ -9,14 +9,14 @@ function ContactForm({ contactFormOpen, setContactFormOpen }) {
 	
 	return (
 		<div className={`contactForm ${contactFormOpen && 'active'}`} onClick={(e) => {
-			e.target.classList.contains('contactForm') && contactFormOpen && setContactFormOpen(false)
+			e.target.classList.contains('contactForm') && contactFormOpen && setContactFormOpen(prevState => !prevState)
 		}}>
 			<div className="contactContent">
 				<button
 					className="closeBtn"
 					onClick={e => {
 						e.preventDefault();
-						setContactFormOpen(false);
+						setContactFormOpen(prevState => !prevState);
 					}}
 				>
 					<FaTimes />

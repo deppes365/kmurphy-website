@@ -5,8 +5,9 @@ import Header from './components/header/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-
+import Footer from './components/footer/Footer';
 import ContactForm from './components/contactForm/ContactForm';
+
 
 function App() {
 	const [contactFormOpen, setContactFormOpen] = useState(false);
@@ -27,7 +28,7 @@ function App() {
 	}, []);
 
 	return (
-		<div className="App">
+		<div className={`App ${contactFormOpen || menuActive ? 'active' : ''}`}>
 			<Header
 				setContactFormOpen={setContactFormOpen}
 				activeLink={activeLink}
@@ -39,6 +40,7 @@ function App() {
 			<Home setActiveLink={setActiveLink} />
 			<About setActiveLink={setActiveLink} />
 			<Services setActiveLink={setActiveLink} />
+      <Footer />
 			<ContactForm
 				setContactFormOpen={setContactFormOpen}
 				contactFormOpen={contactFormOpen}

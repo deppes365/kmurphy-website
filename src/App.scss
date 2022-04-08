@@ -51,11 +51,16 @@ $breakpoints: (
 	width: 100%;
 	position: relative;
 
+
 	.container {
 		width: 100%;
 		max-width: 1300px;
 		padding: 0 1rem;
 		height: 100%;
+
+		@include sm() {
+			padding: 0 0.5rem;
+		}
 	}
 
 	.header {
@@ -74,6 +79,10 @@ $breakpoints: (
 		);
 		transition: 0.8s ease;
 
+		@include sm() {
+			height: 3rem;
+		}
+
 		&.solid {
 			background: $dark-slate-gray;
 			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
@@ -87,16 +96,26 @@ $breakpoints: (
 
 		.logo {
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: center;
+
+			@include sm() {
+				width: 75%;
+			}
 
 			h1 {
 				font-weight: 400;
 				color: $platinum;
 				margin-right: 0.25rem;
-				
+
 				@include lg() {
 					font-size: 1.5rem;
+				}
+
+				@include sm() {
+					font-size: 1.5rem;
+					// font-weight: 500;
+					// letter-spacing: 0.05em;
 				}
 			}
 
@@ -104,6 +123,11 @@ $breakpoints: (
 				width: 1rem;
 				height: 1rem;
 				color: white;
+
+				@include sm() {
+					height: 0.75rem;
+					width: 0.75rem;
+				}
 			}
 		}
 
@@ -132,12 +156,14 @@ $breakpoints: (
 				padding: 5rem 2rem 10rem;
 				background-color: rgba(235, 235, 235, 0.9);
 				transform: translateX(100vw);
-				transition: 0.2s ease;
+				transition: 0.3s ease;
 
 				&.active {
 					transform: translateX(0);
 				}
 			}
+
+			
 
 			.navLink {
 				text-decoration: none;
@@ -162,7 +188,7 @@ $breakpoints: (
 					height: 2.5px;
 					width: 100%;
 					transform: translateX(-50%) scaleX(0);
-					transition: 0.2s ease;
+					transition: 0.2s ease-in-out;
 				}
 
 				&.active,
@@ -211,6 +237,12 @@ $breakpoints: (
 				z-index: 50;
 			}
 
+			@include sm() {
+				right: 0.5rem;
+				width: 2rem;
+				height: 2rem;
+			}
+
 			.topLine,
 			.middleLine,
 			.bottomLine {
@@ -218,7 +250,7 @@ $breakpoints: (
 				height: 2.25px;
 				background-color: $platinum;
 				border-radius: 5px;
-				transition: 0.2s ease;
+				transition: 0.3s ease-in-out;
 			}
 
 			.topLine {
@@ -274,6 +306,11 @@ $breakpoints: (
 		.container {
 			margin-top: 3.5rem;
 			min-height: calc(100vh - 3.5rem);
+
+			@include sm() {
+				margin-top: 3rem;
+				min-height: calc(100vh - 3rem);
+			}
 		}
 	}
 
@@ -296,6 +333,11 @@ $breakpoints: (
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			@include md() {
+				align-items: flex-start;
+				margin-top: 7rem;
+			}
 		}
 
 		.homeContent {
@@ -304,12 +346,22 @@ $breakpoints: (
 			justify-content: center;
 			height: 100%;
 			width: 100%;
+			flex-wrap: wrap;
+
+			@include md() {
+				flex-direction: column;
+			}
 		}
 
 		.homeInfo {
 			flex-basis: 50%;
 			color: $platinum;
 			padding: 2rem;
+
+			@include md() {
+				width: 100%;
+				order: 2;
+			}
 		}
 
 		.homeImgContainer {
@@ -319,11 +371,15 @@ $breakpoints: (
 			justify-content: flex-end;
 			align-items: center;
 
+			@include md() {
+				order: 1;
+			}
+
 			@keyframes scaleIn {
 				0% {
 					transform: scale(0);
 				}
-				
+
 				100% {
 					transform: scale(1);
 				}
@@ -334,11 +390,51 @@ $breakpoints: (
 				height: 350px;
 				border-radius: 50%;
 				animation: scaleIn 1.5s;
-				// animation-delay: 0.5s;
 				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+
+				@include md() {
+					width: 250px;
+					height: 250px;
+				}
 			}
 		}
-	}
+	}///// Home
+
+
+	.footer {
+		width: 100%;
+		height: 5rem;
+		background-color: $dark-slate-gray;
+		display: flex;
+		justify-content: center;
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		p {
+			color: $platinum;
+		}
+
+		.images {
+			width: 50%;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			gap: 0.5rem;
+
+
+			.eoLogo {
+				width: 3rem;
+			}
+
+			.mrLogo {
+				width: 7rem;
+			}
+		}
+	}///// Footer
 
 	.contactForm {
 		width: 100%;
@@ -448,7 +544,7 @@ $breakpoints: (
 			button {
 				font-family: 'Poppins', sans-serif;
 				width: 5rem;
-				height: 2rem;
+				height: 2.5rem;
 				border-radius: 15px;
 				margin: 0 auto;
 				border: 0;
@@ -509,5 +605,5 @@ $breakpoints: (
 				}
 			}
 		}
-	}
+	}///// Contact Form
 }

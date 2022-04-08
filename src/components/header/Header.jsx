@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import patentLogo from '../../assets/images/patentrealtorlogo-white.png'
+import ContactForm from '../contactForm/ContactForm';
 
 
 function Header({ setContactFormOpen, activeLink, navBarSolid, menuActive, setMenuActive}) {
+
+	
 
 	const scrollTo = (page) => {
 		document.getElementById(`${page}`).scrollIntoView({behavior: 'smooth'})
 	}
 
 	const onClick = () => {
-		setMenuActive(!menuActive)
+		setMenuActive(prevState => !prevState)
 	}
 
 	return (
@@ -20,7 +23,7 @@ function Header({ setContactFormOpen, activeLink, navBarSolid, menuActive, setMe
 					<img src={patentLogo} alt="" />
 				</div>
 				<div className="navContainer">
-					<ul className={`navLinks ${menuActive && 'active'}`}>
+					<ul className={`navLinks ${menuActive && 'active'}`} onClick={onClick}>
 						<li>
 							<a className={`navLink ${activeLink === 'home' ? 'active' : ''}`} href="#home" onClick={(e) => {
 								e.preventDefault()
@@ -41,7 +44,7 @@ function Header({ setContactFormOpen, activeLink, navBarSolid, menuActive, setMe
 						</li>
 						<li>
 							<button className='contactBtn' onClick={() => {
-								setContactFormOpen(true)
+								setContactFormOpen(() => true)
 							}}>Contact</button>
 						</li>
 					</ul>
