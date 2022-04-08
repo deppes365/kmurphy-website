@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import patentLogo from '../../assets/images/patentrealtorlogo-white.png'
-import ContactForm from '../contactForm/ContactForm';
+
 
 
 function Header({ setContactFormOpen, activeLink, navBarSolid, menuActive, setMenuActive}) {
