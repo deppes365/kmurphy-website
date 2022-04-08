@@ -14,15 +14,15 @@ function App() {
 	const [navBarSolid, setNavBarSolid] = useState(false);
 
 	useEffect(() => {
-    const homeHeight = document.querySelector('#home').clientHeight
+		const homeHeight = document.querySelector('#home').clientHeight;
 
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > (homeHeight - 500)) {
-        setNavBarSolid(true)
-      } else {
-        setNavBarSolid(false)
-      }
-    })
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > homeHeight - 400) {
+				setNavBarSolid(true);
+			} else {
+				setNavBarSolid(false);
+			}
+		});
 	}, []);
 
 	return (

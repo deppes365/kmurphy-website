@@ -3,6 +3,50 @@ $dark-slate-gray: #265054;
 $midnight-green-eagle: #033b4f;
 $platinum: #ebebeb;
 
+$breakpoints: (
+	'xs': 480px,
+	'sm': 600px,
+	'md': 720px,
+	'lg': 960px,
+	'xl': 1200px,
+);
+
+@mixin xs {
+	@media (max-width: map-get($breakpoints, 'xs')) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (max-width: map-get($breakpoints, 'sm')) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (max-width: map-get($breakpoints, 'md')) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (max-width: map-get($breakpoints, 'lg')) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (max-width: map-get($breakpoints, 'xl')) {
+		@content;
+	}
+}
+
+@mixin breakpoint($bp: 0) {
+	@media (max-width: $bp) {
+		@content;
+	}
+}
+
 .App {
 	width: 100%;
 	position: relative;
@@ -28,7 +72,7 @@ $platinum: #ebebeb;
 			rgba(0, 0, 0, 0.7),
 			rgba(0, 0, 0, 0)
 		);
-		transition: 1s ease;
+		transition: 0.8s ease;
 
 		&.solid {
 			background: $dark-slate-gray;
@@ -38,11 +82,11 @@ $platinum: #ebebeb;
 		.container {
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
 		}
 
 		.logo {
 			display: flex;
-
 			justify-content: center;
 			align-items: center;
 
@@ -50,6 +94,10 @@ $platinum: #ebebeb;
 				font-weight: 400;
 				color: $platinum;
 				margin-right: 0.25rem;
+				
+				@include lg() {
+					font-size: 1.5rem;
+				}
 			}
 
 			img {
@@ -73,6 +121,17 @@ $platinum: #ebebeb;
 			justify-content: space-between;
 			align-items: center;
 
+			@include md() {
+				position: fixed;
+				top: 3.5rem;
+				left: 0;
+				width: 100%;
+				height: calc(100vh - 3.5rem);
+				flex-direction: column;
+				padding: 2rem;
+				background-color: rgba(235, 235, 235, 0.9);
+			}
+
 			.navLink {
 				text-decoration: none;
 				display: inline-block;
@@ -81,6 +140,11 @@ $platinum: #ebebeb;
 				border: 0;
 				cursor: pointer;
 				position: relative;
+
+				@include md() {
+					color: $dark-slate-gray;
+					font-size: 1.5rem;
+				}
 
 				&::after {
 					position: absolute;
@@ -114,6 +178,12 @@ $platinum: #ebebeb;
 				font-size: 1.1rem;
 				box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 
+				@include md() {
+					background-color: $dark-slate-gray;
+					color: $platinum;
+					font-size: 1.5rem;
+				}
+
 				&:hover {
 					transform: scale(1.05);
 				}
@@ -126,12 +196,16 @@ $platinum: #ebebeb;
 			position: relative;
 			display: none;
 
+			@include md() {
+				display: flex;
+			}
+
 			.topLine,
 			.middleLine,
 			.bottomLine {
 				width: 100%;
 				height: 2.25px;
-				background-color: black;
+				background-color: $platinum;
 				border-radius: 5px;
 				transition: 0.2s ease;
 			}
@@ -231,10 +305,23 @@ $platinum: #ebebeb;
 			justify-content: flex-end;
 			align-items: center;
 
+			@keyframes scaleIn {
+				0% {
+					transform: scale(0);
+				}
+				
+				100% {
+					transform: scale(1);
+				}
+			}
+
 			img {
 				width: 350px;
 				height: 350px;
 				border-radius: 50%;
+				animation: scaleIn 1.5s;
+				// animation-delay: 0.5s;
+				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
 			}
 		}
 	}
@@ -272,6 +359,11 @@ $platinum: #ebebeb;
 			overflow: hidden;
 			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 
+			@include md() {
+				flex-direction: column;
+				height: 90%;
+			}
+
 			.closeBtn {
 				display: inline-block;
 				position: absolute;
@@ -288,6 +380,11 @@ $platinum: #ebebeb;
 				&:hover {
 					transform: scale(1.1);
 				}
+
+				@include md() {
+					color: white;
+					z-index: 25;
+				}
 			}
 		}
 
@@ -302,6 +399,11 @@ $platinum: #ebebeb;
 			position: relative;
 			overflow: hidden;
 			background-color: $dark-slate-gray;
+
+			@include md() {
+				width: 100%;
+				flex-basis: 50%;
+			}
 
 			h2 {
 				color: $platinum;
@@ -340,6 +442,11 @@ $platinum: #ebebeb;
 			height: 100%;
 			padding: 3rem 2rem 2rem;
 
+			@include md() {
+				height: 50%;
+				padding: 1rem 1rem;
+			}
+
 			.imgContainer {
 				width: 13rem;
 				height: 13rem;
@@ -348,6 +455,11 @@ $platinum: #ebebeb;
 				box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 				border: 7px solid $dark-slate-gray;
 				margin-bottom: 2rem;
+
+				@include md() {
+					height: 10rem;
+					width: 10rem;
+				}
 
 				img {
 					width: 100%;
