@@ -1,34 +1,36 @@
 import React from 'react';
+import patentLogo from '../../assets/images/patentrealtorlogo-white.png'
 
 
-function Header({ setContactFormOpen }) {
+function Header({ setContactFormOpen, activeLink, navBarSolid}) {
 
 	const scrollTo = (page) => {
 		document.getElementById(`${page}`).scrollIntoView({behavior: 'smooth'})
 	}
 
 	return (
-		<div className="header">
+		<div className={`header ${navBarSolid ? 'solid' : ''}`}>
 			<div className="container">
 				<div className="logo">
 					<h1>Kristin Murphy</h1>
+					<img src={patentLogo} alt="" />
 				</div>
 				<div className="navContainer">
 					<ul className="navLinks">
 						<li>
-							<a className='navLink' href="#home" onClick={(e) => {
+							<a className={`navLink ${activeLink === 'home' ? 'active' : ''}`} href="#home" onClick={(e) => {
 								e.preventDefault()
 								scrollTo('home')
 							}}>Home</a>
 						</li>
 						<li>
-							<a className='navLink' href="#about" onClick={(e) => {
+							<a className={`navLink ${activeLink === 'about' ? 'active' : ''}`} href="#about" onClick={(e) => {
 								e.preventDefault()
 								scrollTo('about')
 							}}>About</a>
 						</li>
 						<li>
-							<a className='navLink' href="services" onClick={(e) => {
+							<a className={`navLink ${activeLink === 'services' ? 'active' : ''}`} href="services" onClick={(e) => {
 								e.preventDefault()
 								scrollTo('services')
 							}}>Services</a>

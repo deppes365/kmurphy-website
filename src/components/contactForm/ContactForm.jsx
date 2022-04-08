@@ -59,15 +59,15 @@ function ContactForm({ contactFormOpen, setContactFormOpen }) {
 					</div>
 					<div className="contactDiv">
 						<FiPhone />
-						<p>+1(804)555-5555</p>
+						<p>+1(540)850-5302</p>
 					</div>
 					<div className="contactDiv">
 						<MdOutlineEmail /> 
-						<p>kmurphy@server.com</p>
+						<p>kristin@missionrealty.com</p>
 					</div>
 					<div className="contactDiv">
 						<FaRegBuilding />
-						<p>123 Main St.</p>
+						<p>3701 Cox Rd. Richmond, Va 23233</p>
 					</div>
 				</div>
 			</div>
