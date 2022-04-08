@@ -51,7 +51,6 @@ $breakpoints: (
 	width: 100%;
 	position: relative;
 
-
 	.container {
 		width: 100%;
 		max-width: 1300px;
@@ -163,8 +162,6 @@ $breakpoints: (
 				}
 			}
 
-			
-
 			.navLink {
 				text-decoration: none;
 				display: inline-block;
@@ -185,7 +182,8 @@ $breakpoints: (
 					top: 100%;
 					content: '';
 					background-color: $platinum;
-					height: 2.5px;
+					height: 2px;
+					border-radius: 5px;
 					width: 100%;
 					transform: translateX(-50%) scaleX(0);
 					transition: 0.2s ease-in-out;
@@ -315,9 +313,15 @@ $breakpoints: (
 	}
 
 	.card {
-		backdrop-filter: blur(7px) saturate(180%);
-		-webkit-backdrop-filter: blur(7px) saturate(180%);
-		background-color: rgba(198, 198, 198, 0.18);
+		// backdrop-filter: blur(7px) saturate(180%);
+		// -webkit-backdrop-filter: blur(7px) saturate(180%);
+		// background-color: rgba(198, 198, 198, 0.18);
+		// border-radius: 12px;
+		// border: 1px solid rgba(255, 255, 255, 0.125);
+
+		backdrop-filter: blur(15px) saturate(180%);
+		-webkit-backdrop-filter: blur(15px) saturate(180%);
+		background-color: rgba(38, 80, 84, 0.6);
 		border-radius: 12px;
 		border: 1px solid rgba(255, 255, 255, 0.125);
 	}
@@ -398,8 +402,7 @@ $breakpoints: (
 				}
 			}
 		}
-	}///// Home
-
+	} ///// Home
 
 	.footer {
 		width: 100%;
@@ -425,7 +428,6 @@ $breakpoints: (
 			align-items: center;
 			gap: 0.5rem;
 
-
 			.eoLogo {
 				width: 3rem;
 			}
@@ -434,7 +436,7 @@ $breakpoints: (
 				width: 7rem;
 			}
 		}
-	}///// Footer
+	} ///// Footer
 
 	.contactForm {
 		width: 100%;
@@ -605,5 +607,5 @@ $breakpoints: (
 				}
 			}
 		}
-	}///// Contact Form
+	} ///// Contact Form
 }
