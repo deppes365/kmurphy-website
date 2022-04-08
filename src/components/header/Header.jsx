@@ -2,10 +2,14 @@ import React from 'react';
 import patentLogo from '../../assets/images/patentrealtorlogo-white.png'
 
 
-function Header({ setContactFormOpen, activeLink, navBarSolid}) {
+function Header({ setContactFormOpen, activeLink, navBarSolid, menuActive, setMenuActive}) {
 
 	const scrollTo = (page) => {
 		document.getElementById(`${page}`).scrollIntoView({behavior: 'smooth'})
+	}
+
+	const onClick = () => {
+		setMenuActive(!menuActive)
 	}
 
 	return (
@@ -16,7 +20,7 @@ function Header({ setContactFormOpen, activeLink, navBarSolid}) {
 					<img src={patentLogo} alt="" />
 				</div>
 				<div className="navContainer">
-					<ul className="navLinks">
+					<ul className={`navLinks ${menuActive && 'active'}`}>
 						<li>
 							<a className={`navLink ${activeLink === 'home' ? 'active' : ''}`} href="#home" onClick={(e) => {
 								e.preventDefault()
@@ -42,7 +46,7 @@ function Header({ setContactFormOpen, activeLink, navBarSolid}) {
 						</li>
 					</ul>
 				</div>
-				<div className="hamburger">
+				<div className={`hamburger ${menuActive && 'active'}`} onClick={onClick}>
 					<div className="topLine"></div>
 					<div className="middleLine"></div>
 					<div className="bottomLine"></div>

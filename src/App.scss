@@ -112,6 +112,7 @@ $breakpoints: (
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
+			position: relative;
 		}
 
 		.navLinks {
@@ -123,13 +124,19 @@ $breakpoints: (
 
 			@include md() {
 				position: fixed;
-				top: 3.5rem;
+				top: 0;
 				left: 0;
 				width: 100%;
-				height: calc(100vh - 3.5rem);
+				height: 100vh;
 				flex-direction: column;
-				padding: 2rem;
+				padding: 5rem 2rem 10rem;
 				background-color: rgba(235, 235, 235, 0.9);
+				transform: translateX(100vw);
+				transition: 0.2s ease;
+
+				&.active {
+					transform: translateX(0);
+				}
 			}
 
 			.navLink {
@@ -193,11 +200,15 @@ $breakpoints: (
 		.hamburger {
 			width: 2.25rem;
 			height: 2.25rem;
-			position: relative;
 			display: none;
 
 			@include md() {
 				display: flex;
+				position: absolute;
+				top: 50%;
+				right: 1rem;
+				transform: translateY(-50%);
+				z-index: 50;
 			}
 
 			.topLine,
@@ -234,16 +245,19 @@ $breakpoints: (
 					top: 50%;
 					left: 50%;
 					transform: translate(-50%, -50%) rotate(45deg);
+					background-color: $dark-slate-gray;
 				}
 
 				.middleLine {
 					opacity: 0;
+					background-color: $dark-slate-gray;
 				}
 
 				.bottomLine {
 					top: 50%;
 					left: 50%;
 					transform: translate(-50%, -50%) rotate(-45deg);
+					background-color: $dark-slate-gray;
 				}
 			}
 		}
@@ -415,12 +429,20 @@ $breakpoints: (
 				height: 1.75rem;
 				padding: 0 0.5rem;
 				font-family: 'Poppins', sans-serif;
+				border: 0;
+				background-color: $platinum;
+				caret-color: $dark-slate-gray;
+				outline: 0;
 			}
 
 			textarea {
 				border-radius: 15px;
 				padding: 0.5rem;
 				font-family: 'Poppins', sans-serif;
+				border: 0;
+				background-color: $platinum;
+				caret-color: $dark-slate-gray;
+				outline: 0;
 			}
 
 			button {
@@ -430,6 +452,13 @@ $breakpoints: (
 				border-radius: 15px;
 				margin: 0 auto;
 				border: 0;
+				background-color: $platinum;
+				color: $dark-slate-gray;
+				transition: 0.2s ease;
+
+				&:hover {
+					transform: scale(1.05);
+				}
 			}
 		}
 

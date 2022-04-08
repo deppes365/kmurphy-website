@@ -12,6 +12,7 @@ function App() {
 	const [contactFormOpen, setContactFormOpen] = useState(false);
 	const [activeLink, setActiveLink] = useState('');
 	const [navBarSolid, setNavBarSolid] = useState(false);
+  const [menuActive, setMenuActive] = useState(false)
 
 	useEffect(() => {
 		const homeHeight = document.querySelector('#home').clientHeight;
@@ -32,6 +33,8 @@ function App() {
 				activeLink={activeLink}
 				setActiveLink={setActiveLink}
 				navBarSolid={navBarSolid}
+        menuActive={menuActive}
+        setMenuActive={setMenuActive}
 			/>
 			<Home setActiveLink={setActiveLink} />
 			<About setActiveLink={setActiveLink} />
