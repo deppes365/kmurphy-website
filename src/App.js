@@ -8,18 +8,18 @@ import Services from './pages/Services';
 import Footer from './components/footer/Footer';
 import ContactForm from './components/contactForm/ContactForm';
 
-
 function App() {
 	const [contactFormOpen, setContactFormOpen] = useState(false);
 	const [activeLink, setActiveLink] = useState('');
 	const [navBarSolid, setNavBarSolid] = useState(false);
-  const [menuActive, setMenuActive] = useState(false)
+	const [menuActive, setMenuActive] = useState(false);
 
 	useEffect(() => {
-		const homeHeight = document.querySelector('#home').clientHeight;
 
+		//When the user scrolls down the site, it changes the navbar to a solid color
+		const homeHeight = document.querySelector('#home').clientHeight;
 		window.addEventListener('scroll', () => {
-			if (window.scrollY > homeHeight - 400) {
+			if (window.scrollY > homeHeight - 200) {
 				setNavBarSolid(true);
 			} else {
 				setNavBarSolid(false);
@@ -28,19 +28,19 @@ function App() {
 	}, []);
 
 	return (
-		<div className={`App ${contactFormOpen || menuActive ? 'active' : ''}`}>
+		<div className='App'>
 			<Header
 				setContactFormOpen={setContactFormOpen}
 				activeLink={activeLink}
 				setActiveLink={setActiveLink}
 				navBarSolid={navBarSolid}
-        menuActive={menuActive}
-        setMenuActive={setMenuActive}
+				menuActive={menuActive}
+				setMenuActive={setMenuActive}
 			/>
 			<Home setActiveLink={setActiveLink} />
 			<About setActiveLink={setActiveLink} />
 			<Services setActiveLink={setActiveLink} />
-      <Footer />
+			<Footer />
 			<ContactForm
 				setContactFormOpen={setContactFormOpen}
 				contactFormOpen={contactFormOpen}

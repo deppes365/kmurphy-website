@@ -1,0 +1,139 @@
+$old-mauve: #5b2333;
+$dark-slate-gray: #265054;
+$midnight-green-eagle: #033b4f;
+$platinum: #ebebeb;
+
+$breakpoints: (
+	'xs': 480px,
+	'sm': 600px,
+	'md': 720px,
+	'lg': 960px,
+	'xl': 1200px,
+);
+
+@mixin xs {
+	@media (max-width: map-get($breakpoints, 'xs')) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (max-width: map-get($breakpoints, 'sm')) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (max-width: map-get($breakpoints, 'md')) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (max-width: map-get($breakpoints, 'lg')) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (max-width: map-get($breakpoints, 'xl')) {
+		@content;
+	}
+}
+
+@mixin breakpoint($bp: 0) {
+	@media (max-width: $bp) {
+		@content;
+	}
+}
+
+.testimonials {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    min-height: 300px;
+}
+
+.swiper {
+	width: 100%;
+	height: auto;
+	border-radius: 30px;
+
+    @include lg() {
+        width: 80;
+    }
+    
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: $platinum;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	padding: 1rem 3rem;
+	flex-direction: column;
+
+	//Custom Styles
+	color: $platinum;
+
+	.reviewContainer {
+		width: 95%;
+		height: 95%;
+		background-color: $dark-slate-gray;
+		border-radius: 30px;
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+        justify-content: center;
+
+		.rating {
+			display: flex;
+			justify-content: center;
+			gap: 0.5rem;
+			margin-bottom: 0.5rem;
+
+            .icon {
+                font-size: 1.5rem;
+                color: #FAE635;
+            }
+		}
+
+		.author {
+			text-align: right;
+			margin-top: 0.5rem;
+			letter-spacing: 0.025em;
+		}
+	}
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: $dark-slate-gray !important;
+    transform: translateY(-50%);
+
+    &::after {
+        font-size: 2rem !important;
+    }
+}
+
+

@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react'
+import Testimonials from '../components/testimonials/Testimonials';
 
 function Services({setActiveLink}) {
 
@@ -20,7 +21,9 @@ function Services({setActiveLink}) {
 
   return (
     <div className='page' id='services' ref={services}>
-      <div className="container">Services</div>
+      <div className="container">
+		<Testimonials />
+	  </div>
     </div>
   )
 }

@@ -404,6 +404,13 @@ $breakpoints: (
 		}
 	} ///// Home
 
+	#services {
+		.container {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
 	.footer {
 		width: 100%;
 		height: 5rem;
