@@ -1,55 +1,89 @@
 import React from 'react';
-import patentLogo from '../../assets/images/patentrealtorlogo-white.png'
+import patentLogo from '../../assets/images/patentrealtorlogo-white.png';
 
-
-
-function Header({ setContactFormOpen, activeLink, navBarSolid, menuActive, setMenuActive}) {
-
-	
-
-	const scrollTo = (page) => {
-		document.getElementById(`${page}`).scrollIntoView({behavior: 'smooth'})
-	}
+function Header({
+	setContactFormOpen,
+	activeLink,
+	navBarSolid,
+	menuActive,
+	setMenuActive,
+}) {
+	const scrollTo = page => {
+		document.getElementById(`${page}`).scrollIntoView({ behavior: 'smooth' });
+	};
 
 	const onClick = () => {
-		setMenuActive(prevState => !prevState)
-	}
+		setMenuActive(prevState => !prevState);
+	};
 
 	return (
 		<div className={`header ${navBarSolid ? 'solid' : ''}`}>
 			<div className="container">
 				<div className="logo">
-					<h1>Kristin Murphy</h1>
-					<img src={patentLogo} alt="" />
+					<div>
+						<h1>Kristin Murphy <img src={patentLogo} alt="" /></h1>
+						<p>Mission Realty brokered by eXp Realty</p>
+					</div>
 				</div>
 				<div className="navContainer">
-					<ul className={`navLinks ${menuActive && 'active'}`} onClick={onClick}>
+					<ul
+						className={`navLinks ${menuActive && 'active'}`}
+						onClick={onClick}
+					>
 						<li>
-							<a className={`navLink ${activeLink === 'home' ? 'active' : ''}`} href="#home" onClick={(e) => {
-								e.preventDefault()
-								scrollTo('home')
-							}}>Home</a>
+							<a
+								className={`navLink ${activeLink === 'home' ? 'active' : ''}`}
+								href="#home"
+								onClick={e => {
+									e.preventDefault();
+									scrollTo('home');
+								}}
+							>
+								Home
+							</a>
 						</li>
 						<li>
-							<a className={`navLink ${activeLink === 'about' ? 'active' : ''}`} href="#about" onClick={(e) => {
-								e.preventDefault()
-								scrollTo('about')
-							}}>About</a>
+							<a
+								className={`navLink ${activeLink === 'about' ? 'active' : ''}`}
+								href="#about"
+								onClick={e => {
+									e.preventDefault();
+									scrollTo('about');
+								}}
+							>
+								About
+							</a>
 						</li>
 						<li>
-							<a className={`navLink ${activeLink === 'services' ? 'active' : ''}`} href="services" onClick={(e) => {
-								e.preventDefault()
-								scrollTo('services')
-							}}>Services</a>
+							<a
+								className={`navLink ${
+									activeLink === 'services' ? 'active' : ''
+								}`}
+								href="services"
+								onClick={e => {
+									e.preventDefault();
+									scrollTo('services');
+								}}
+							>
+								Services
+							</a>
 						</li>
 						<li>
-							<button className='contactBtn' onClick={() => {
-								setContactFormOpen(() => true)
-							}}>Contact</button>
+							<button
+								className="contactBtn"
+								onClick={() => {
+									setContactFormOpen(() => true);
+								}}
+							>
+								Contact
+							</button>
 						</li>
 					</ul>
 				</div>
-				<div className={`hamburger ${menuActive && 'active'}`} onClick={onClick}>
+				<div
+					className={`hamburger ${menuActive && 'active'}`}
+					onClick={onClick}
+				>
 					<div className="topLine"></div>
 					<div className="middleLine"></div>
 					<div className="bottomLine"></div>

@@ -8,6 +8,8 @@ import Services from './pages/Services';
 import Footer from './components/footer/Footer';
 import ContactForm from './components/contactForm/ContactForm';
 
+import { FaPhone } from 'react-icons/fa';
+
 function App() {
 	const [contactFormOpen, setContactFormOpen] = useState(false);
 	const [activeLink, setActiveLink] = useState('');
@@ -15,7 +17,6 @@ function App() {
 	const [menuActive, setMenuActive] = useState(false);
 
 	useEffect(() => {
-
 		//When the user scrolls down the site, it changes the navbar to a solid color
 		const homeHeight = document.querySelector('#home').clientHeight;
 		window.addEventListener('scroll', () => {
@@ -28,7 +29,11 @@ function App() {
 	}, []);
 
 	return (
-		<div className='App'>
+		<div className="App">
+			<a className="callBtn" href="tel:+15408505302">
+				<FaPhone />
+				<p>Call now!</p>
+			</a>
 			<Header
 				setContactFormOpen={setContactFormOpen}
 				activeLink={activeLink}

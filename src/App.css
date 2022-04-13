@@ -1,0 +1,847 @@
+.App {
+  width: 100%;
+  position: relative;
+}
+
+.App .callBtn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  background-color: #fff;
+  z-index: 20;
+  bottom: 5rem;
+  right: 0.5rem;
+  border-radius: 20px;
+  padding: 0.5rem;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  color: #265054;
+  text-decoration: none;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.App .callBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.App .callBtn .icon {
+  font-size: 1.5rem;
+  color: #265054;
+}
+
+.App .container {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .App .container {
+    padding: 0 0.5rem;
+  }
+}
+
+.App .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  height: 5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  -webkit-transition: 0.8s ease;
+  transition: 0.8s ease;
+}
+
+@media (max-width: 600px) {
+  .App .header {
+    height: 3rem;
+  }
+}
+
+.App .header.solid {
+  background: #265054;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  height: 4rem;
+}
+
+.App .header.solid .logo h1 {
+  font-size: 1.5rem;
+}
+
+.App .header.solid .logo h1 img {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.App .header.solid .logo p {
+  font-size: 0.65rem;
+}
+
+.App .header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .header .logo div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .header .logo div h1 {
+  position: relative;
+}
+
+.App .header .logo div h1 img {
+  width: 1rem;
+  height: 1rem;
+  color: white;
+  position: absolute;
+  right: -1rem;
+  top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .App .header .logo div h1 img {
+    height: 0.75rem;
+    width: 0.75rem;
+  }
+}
+
+.App .header .logo p {
+  font-size: 0.75rem;
+  text-align: center;
+  color: white;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+@media (max-width: 600px) {
+  .App .header .logo {
+    width: 75%;
+  }
+}
+
+.App .header .logo h1 {
+  font-weight: 400;
+  color: #ebebeb;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 2px solid #fff;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+@media (max-width: 960px) {
+  .App .header .logo h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .App .header .logo h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.App .header .navContainer {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+}
+
+.App .header .navLinks {
+  width: 80%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 720px) {
+  .App .header .navLinks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5rem 2rem 10rem;
+    background-color: rgba(235, 235, 235, 0.9);
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  .App .header .navLinks.active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.App .header .navLinks .navLink {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  font-size: 1.1rem;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .App .header .navLinks .navLink {
+    color: #265054;
+    font-size: 1.5rem;
+  }
+}
+
+.App .header .navLinks .navLink::after {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  content: '';
+  background-color: #ebebeb;
+  height: 2px;
+  border-radius: 5px;
+  width: 100%;
+  -webkit-transform: translateX(-50%) scaleX(0);
+          transform: translateX(-50%) scaleX(0);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.App .header .navLinks .navLink.active::after, .App .header .navLinks .navLink:hover::after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+          transform: translateX(-50%) scaleX(1);
+}
+
+.App .header .navLinks .contactBtn {
+  display: inline-block;
+  background-color: #ebebeb;
+  color: #265054;
+  padding: 0.5rem 0.75rem;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 0;
+  font-size: 1.1rem;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 720px) {
+  .App .header .navLinks .contactBtn {
+    background-color: #265054;
+    color: #ebebeb;
+    font-size: 1.5rem;
+  }
+}
+
+.App .header .navLinks .contactBtn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.App .header .hamburger {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .App .header .hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 50;
+  }
+}
+
+@media (max-width: 600px) {
+  .App .header .hamburger {
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.App .header .hamburger .topLine,
+.App .header .hamburger .middleLine,
+.App .header .hamburger .bottomLine {
+  width: 100%;
+  height: 2.25px;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.App .header .hamburger .topLine {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -25%);
+          transform: translate(-50%, -25%);
+}
+
+.App .header .hamburger .middleLine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.App .header .hamburger .bottomLine {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+}
+
+.App .header .hamburger.active .topLine {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #265054;
+}
+
+.App .header .hamburger.active .middleLine {
+  opacity: 0;
+  background-color: #265054;
+}
+
+.App .header .hamburger.active .bottomLine {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+  background-color: #265054;
+}
+
+.App .page {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  background-color: #ebebeb;
+  scroll-margin-top: 5rem;
+}
+
+.App .page .container {
+  min-height: calc(100vh - 5rem);
+}
+
+@media (max-width: 600px) {
+  .App .page .container {
+    margin-top: 3rem;
+    min-height: calc(100vh - 3rem);
+  }
+}
+
+.App .card {
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  background-color: rgba(38, 80, 84, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.App #home {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(./assets/images/home-bg.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./assets/images/home-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.App #home .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 720px) {
+  .App #home .container {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-top: 7rem;
+  }
+}
+
+.App #home .homeContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .App #home .homeContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.App #home .homeInfo {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  color: #ebebeb;
+  padding: 2rem;
+}
+
+@media (max-width: 720px) {
+  .App #home .homeInfo {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+.App #home .homeImgContainer {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 720px) {
+  .App #home .homeImgContainer {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+@-webkit-keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.App #home .homeImgContainer img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  -webkit-animation: scaleIn 1.5s;
+          animation: scaleIn 1.5s;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 720px) {
+  .App #home .homeImgContainer img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.App #services .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .footer {
+  width: 100%;
+  height: 5rem;
+  background-color: #265054;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .footer p {
+  color: #ebebeb;
+}
+
+.App .footer .images {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+
+.App .footer .images .eoLogo {
+  width: 3rem;
+}
+
+.App .footer .images .mrLogo {
+  width: 7rem;
+}
+
+.App .contactForm {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 25;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.App .contactForm.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.App .contactForm .contactContent {
+  background-color: #ebebeb;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 1rem;
+  border-radius: 30px;
+  height: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 720px) {
+  .App .contactForm .contactContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 90%;
+  }
+}
+
+.App .contactForm .contactContent .closeBtn {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  color: #265054;
+  border: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.App .contactForm .contactContent .closeBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media (max-width: 720px) {
+  .App .contactForm .contactContent .closeBtn {
+    color: white;
+    z-index: 25;
+  }
+}
+
+.App .contactForm .form {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #265054;
+}
+
+@media (max-width: 720px) {
+  .App .contactForm .form {
+    width: 100%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+}
+
+.App .contactForm .form h2 {
+  color: #ebebeb;
+  text-align: center;
+}
+
+.App .contactForm .form input {
+  border-radius: 15px;
+  height: 1.75rem;
+  padding: 0 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  border: 0;
+  background-color: #ebebeb;
+  caret-color: #265054;
+  outline: 0;
+}
+
+.App .contactForm .form textarea {
+  border-radius: 15px;
+  padding: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  border: 0;
+  background-color: #ebebeb;
+  caret-color: #265054;
+  outline: 0;
+}
+
+.App .contactForm .form button {
+  font-family: 'Poppins', sans-serif;
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 15px;
+  margin: 0 auto;
+  border: 0;
+  background-color: #ebebeb;
+  color: #265054;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.App .contactForm .form button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.App .contactForm .contactInfo {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 100%;
+  padding: 3rem 2rem 2rem;
+}
+
+@media (max-width: 720px) {
+  .App .contactForm .contactInfo {
+    height: 50%;
+    padding: 1rem 1rem;
+  }
+}
+
+.App .contactForm .contactInfo .imgContainer {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  border: 7px solid #265054;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 720px) {
+  .App .contactForm .contactInfo .imgContainer {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+.App .contactForm .contactInfo .imgContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.App .contactForm .contactInfo .contactDiv {
+  width: auto;
+  min-width: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .contactForm .contactInfo .contactDiv p {
+  margin-left: 1rem;
+}
+/*# sourceMappingURL=App.css.map */
