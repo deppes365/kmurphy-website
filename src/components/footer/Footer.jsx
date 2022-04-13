@@ -11,8 +11,8 @@ function Footer() {
 					Reserved
 				</p>
 				<div className="images">
-					<img className="eoLogo" src={EqualOpportunity} alt="" />
 					<img className="mrLogo" src={MissionRealtyLogo} alt="" />
+					<img className="eoLogo" src={EqualOpportunity} alt="" />
 				</div>
 			</div>
 		</div>
