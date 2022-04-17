@@ -44,7 +44,7 @@ function App() {
 			/>
 			<Home setActiveLink={setActiveLink} />
 			<About setActiveLink={setActiveLink} />
-			<Services setActiveLink={setActiveLink} />
+			<Services setActiveLink={setActiveLink} setContactFormOpen={setContactFormOpen} />
 			<Footer />
 			<ContactForm
 				setContactFormOpen={setContactFormOpen}

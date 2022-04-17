@@ -20,10 +20,10 @@ function Header({
 		<div className={`header ${navBarSolid ? 'solid' : ''}`}>
 			<div className="container">
 				<div className="logo">
-					<div>
-						<h1>Kristin Murphy <img src={patentLogo} alt="" /></h1>
-						<p>Mission Realty brokered by eXp Realty</p>
-					</div>
+					<h1>
+						Kristin Murphy
+					</h1>
+					<img src={patentLogo} alt="" />
 				</div>
 				<div className="navContainer">
 					<ul
