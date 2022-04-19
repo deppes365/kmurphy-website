@@ -566,7 +566,7 @@ $breakpoints: (
 				}
 
 				@include sm() {
-					padding: 1rem;
+					padding: 0;
 				}
 
 				img {
@@ -599,7 +599,6 @@ $breakpoints: (
 				@include sm() {
 					height: 350px;
 				}
-
 
 				.swiper-button-prev,
 				.swiper-button-next {
