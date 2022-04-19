@@ -613,15 +613,22 @@ $breakpoints: (
 					transform: translateY(-50%);
 				}
 
+				.swiper-pagination-bullet {
+					background-color: rgba(255, 255, 255, 1)
+				}
+
 				.swiper-button-prev::after {
-					font-size: 1.5rem !important;
-					content: ' \25C1';
+					font-size: 3rem !important;
+					content: '\2039';
+					transform: translate(-2px, -6px);
+					
 				}
 
 				.swiper-button-next::after {
-					font-size: 1.5rem !important;
-					content: '\25C1';
-					transform: rotate(180deg);
+					font-size: 3rem !important;
+					content: '\203A';
+					transform: translate(2px, -6px);
+					
 				}
 
 				@include lg() {

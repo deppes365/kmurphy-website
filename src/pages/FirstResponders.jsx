@@ -7,11 +7,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 // import required modules
-import { Navigation, Autoplay } from 'swiper';
-import {images} from './firstResponderImages'
-
+import { Navigation, Autoplay, Pagination } from 'swiper';
+import { images } from './firstResponderImages';
 
 function FirstResponders({ setContactFormOpen }) {
 	const [slidesPerView, setSlidesPerView] = useState(3);
@@ -30,7 +30,7 @@ function FirstResponders({ setContactFormOpen }) {
 	};
 
 	useEffect(() => {
-		checkWindowSize()
+		checkWindowSize();
 		window.addEventListener('resize', checkWindowSize);
 	}, []);
 
@@ -56,7 +56,10 @@ function FirstResponders({ setContactFormOpen }) {
 				<h2>My First Responder Success Stories</h2>
 				<Swiper
 					navigation={true}
-					modules={[Navigation, Autoplay]}
+					pagination={{
+						dynamicBullets: true,
+					}}
+					modules={[Navigation, Autoplay, Pagination]}
 					slidesPerView={slidesPerView}
 					spaceBetween={30}
 					autoplay={{ delay: 2500 }}
