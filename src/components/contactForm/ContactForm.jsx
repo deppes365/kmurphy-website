@@ -3,6 +3,10 @@ import { FaTimes, FaRegBuilding } from 'react-icons/fa';
 import {FiPhone} from 'react-icons/fi'
 import {MdOutlineEmail} from 'react-icons/md'
 import headshot from '../../assets/images/headshot.jpg'
+import MissionLogo from '../../assets/images/missionrealtylogo.jpg'
+import equalOppLogo from '../../assets/images/equalopportunity.png'
+
+
 
 function ContactForm({ contactFormOpen, setContactFormOpen }) {
 
@@ -54,7 +58,7 @@ function ContactForm({ contactFormOpen, setContactFormOpen }) {
 					<button type="submit">Submit</button>
 				</form>
 				<div className="contactInfo">
-					<div className="imgContainer">
+					<div className="headshotContainer">
 						<img src={headshot} alt="" />
 					</div>
 					<div className="contactDiv">
@@ -69,10 +73,16 @@ function ContactForm({ contactFormOpen, setContactFormOpen }) {
 						<FaRegBuilding />
 						<p>3701 Cox Rd. Richmond, Va 23233</p>
 					</div>
+					<div className="imgContainer">
+						<img className='missionLogo' src={MissionLogo} alt="" />
+						<img className='equalOppLogo' src={equalOppLogo} alt="" />
+					</div>
 				</div>
 			</div>
 		</div>
 	);
 }
+
+
 
 export default ContactForm;

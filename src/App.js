@@ -7,6 +7,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Footer from './components/footer/Footer';
 import ContactForm from './components/contactForm/ContactForm';
+import FirstResponders from './pages/FirstResponders';
 
 import { FaPhone } from 'react-icons/fa';
 
@@ -44,7 +45,8 @@ function App() {
 			/>
 			<Home setActiveLink={setActiveLink} />
 			<About setActiveLink={setActiveLink} />
-			<Services setActiveLink={setActiveLink} setContactFormOpen={setContactFormOpen} />
+			<FirstResponders setContactFormOpen={setContactFormOpen}/>
+			<Services setActiveLink={setActiveLink} />
 			<Footer />
 			<ContactForm
 				setContactFormOpen={setContactFormOpen}

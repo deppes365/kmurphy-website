@@ -100,7 +100,7 @@ $breakpoints: (
 		height: 3.5rem;
 		background: linear-gradient(
 			to bottom,
-			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0.7),
 			rgba(0, 0, 0, 0)
 		);
 		transition: 0.8s ease;
@@ -373,7 +373,7 @@ $breakpoints: (
 	}
 
 	#home {
-		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
 			url(./assets/images/home-bg.jpg);
 		background-position: center;
 		background-size: cover;
@@ -450,31 +450,33 @@ $breakpoints: (
 		}
 	} ///// Home
 
-	#services {
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		h1 {
-			text-align: center;
+	.firstResponders {
+		width: 100%;
+		background-color: $platinum;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+		margin-bottom: 2rem;
+
+		@include md() {
+			padding: 1rem;
 		}
 
-		.firstResponder {
+		@include sm() {
+			padding: 0.5rem;
+		}
+
+		.container {
+			min-height: 60vh;
+			border-radius: 50px;
+			overflow: hidden;
 			position: relative;
-			width: 100%;
-			max-width: 800px;
-			height: 30rem;
-			border-radius: 30px;
-			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-			padding: 2rem;
+			z-index: 1;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
-			color: #fff;
-			margin: 2rem 0;
-			overflow: hidden;
-			z-index: 1;
+			justify-content: space-between;
+			padding-bottom: 1rem;
 
 			.bg {
 				position: absolute;
@@ -482,18 +484,19 @@ $breakpoints: (
 				left: 0;
 				right: 0;
 				bottom: 0;
-				height: 100%;
+				z-index: -1;
 				width: 100%;
+				height: 100%;
 				background-image: linear-gradient(
 						to right,
 						rgba(0, 0, 0, 0.3),
-						rgba(0, 0, 0, 0)
+						rgba(0, 0, 0, 0.3)
 					),
-					url(./assets/images/policecar.jpg);
-				background-size: cover;
+					url('./assets/images/policecar.jpg');
 				background-position: center;
+				background-size: cover;
 				background-repeat: no-repeat;
-				z-index: -1;
+				border-radius: 40px;
 				transition: 1s ease;
 			}
 
@@ -503,30 +506,188 @@ $breakpoints: (
 				}
 			}
 
-			p {
-				font-size: 1.2rem;
-				margin-top: 0.5rem;
-			}
+			.info {
+				padding: 1rem;
+				width: 100%;
+				min-height: 50%;
+				display: flex;
+				gap: 1rem;
 
-			.btn {
-				color: $dark-slate-gray;
-				background-color: #fff;
-				width: auto;
-				display: inline-block;
-				width: 12rem;
-				text-align: center;
-				text-decoration: none;
-				font-size: 1.25rem;
-				border-radius: 30px;
-				padding: 1rem 0.5rem;
-				margin-top: 1rem;
-				transition: 0.2s ease;
-				border: 0;
-
-				&:hover {
-					transform: scale(1.05);
+				@include md() {
+					flex-direction: column;
+					align-items: center;
 				}
 			}
+
+			.content {
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				text-align: center;
+
+				@include md() {
+					width: 100%;
+				}
+
+				button {
+					background-color: $platinum;
+					border: 0;
+					color: $dark-slate-gray;
+					font-size: 1.2rem;
+					padding: 0.5rem;
+					border-radius: 30px;
+					margin-top: 1rem;
+					box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+					transition: 0.2s ease;
+
+					&:hover {
+						transform: scale(1.05);
+					}
+				}
+			}
+
+			.imgContainer {
+				width: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 3rem;
+
+				@include lg() {
+					padding: 2rem;
+				}
+
+				@include md() {
+					width: 90%;
+					max-width: 500px;
+				}
+
+				@include sm() {
+					padding: 1rem;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+					border-radius: 10px;
+				}
+			}
+
+			h2 {
+				text-align: center;
+				color: #fff;
+			}
+
+			.swiper-wrapper {
+				display: flex;
+				align-items: center;
+			}
+
+			.swiper {
+				height: 275px;
+				width: 100%;
+				max-width: 1100px;
+				background-color: rgba(255, 255, 255, 0.5);
+				display: flex;
+				align-items: center;
+				padding: 1rem;
+
+				@include sm() {
+					height: 350px;
+				}
+
+
+				.swiper-button-prev,
+				.swiper-button-next {
+					margin-top: 0.25rem;
+					color: #fff !important;
+					background-color: rgba(38, 80, 84, 0.8);
+					width: 2rem;
+					height: 2rem;
+					border-radius: 50%;
+					font-size: 0.5rem;
+					padding: 1rem 0.5rem;
+					transform: translateY(-50%);
+				}
+
+				.swiper-button-prev::after {
+					font-size: 1.5rem !important;
+					content: ' \25C1';
+				}
+
+				.swiper-button-next::after {
+					font-size: 1.5rem !important;
+					content: '\25C1';
+					transform: rotate(180deg);
+				}
+
+				@include lg() {
+					min-height: 250px;
+				}
+
+				@include sm() {
+					max-height: 375px;
+				}
+
+				.swiper-slide {
+					width: 300px;
+					border-radius: 30px;
+					display: flex;
+					justify-content: flex-end;
+					align-items: flex-end;
+					padding: 0;
+					overflow: hidden;
+					box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+					.info {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: flex-end;
+						width: 100%;
+						text-align: center;
+						height: auto;
+						background: linear-gradient(
+							to top,
+							rgba(0, 0, 0, 0.7),
+							rgba(0, 0, 0, 0)
+						);
+					}
+
+					h3 {
+						font-weight: 400;
+						border-bottom: 2px solid #fff;
+					}
+
+					p {
+						display: inline-block;
+						margin-top: -1rem;
+					}
+
+					img {
+						height: 100%;
+						width: 100%;
+						object-fit: contain;
+						border: 5px solid #fff;
+					}
+				}
+			}
+		}
+	}
+
+	#services {
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.testimonialHeader {
+			text-align: center;
 		}
 
 		.cardsContainer {
@@ -605,40 +766,6 @@ $breakpoints: (
 			}
 		}
 	}
-
-	.footer {
-		width: 100%;
-		height: 5rem;
-		background-color: $dark-slate-gray;
-		display: flex;
-		justify-content: center;
-
-		.container {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		p {
-			color: $platinum;
-		}
-
-		.images {
-			width: 50%;
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			gap: 0.5rem;
-
-			.eoLogo {
-				width: 3rem;
-			}
-
-			.mrLogo {
-				width: 7rem;
-			}
-		}
-	} ///// Footer
 
 	.contactForm {
 		width: 100%;
@@ -767,16 +894,16 @@ $breakpoints: (
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: flex-start;
+			justify-content: center;
 			height: 100%;
-			padding: 3rem 2rem 2rem;
+			padding: 2rem;
 
 			@include md() {
 				height: 50%;
 				padding: 1rem 1rem;
 			}
 
-			.imgContainer {
+			.headshotContainer {
 				width: 13rem;
 				height: 13rem;
 				border-radius: 50%;
@@ -806,8 +933,64 @@ $breakpoints: (
 
 				p {
 					margin-left: 1rem;
+					font-size: 1.2rem;
+				}
+
+				&:nth-child(4) {
+					margin-bottom: 3rem;
+				}
+			}
+
+			.imgContainer {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 2rem;
+				align-self: flex-end;
+
+				.missionLogo {
+					height: 3.5rem;
+				}
+
+				.equalOppLogo {
+					height: 3.5rem;
 				}
 			}
 		}
 	} ///// Contact Form
+
+	.footer {
+		width: 100%;
+		height: 5rem;
+		background-color: $dark-slate-gray;
+		display: flex;
+		justify-content: center;
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		p {
+			color: $platinum;
+		}
+
+		.images {
+			width: 50%;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			gap: 0.5rem;
+
+			.eoLogo {
+				width: 3rem;
+			}
+
+			.mrLogo {
+				width: 7rem;
+			}
+		}
+	} ///// Footer
 }

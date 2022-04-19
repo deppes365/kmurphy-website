@@ -13,7 +13,7 @@ import { RiFilePaper2Line } from 'react-icons/ri';
 import { GiPayMoney } from 'react-icons/gi';
 import { GoPrimitiveDot } from 'react-icons/go';
 
-function Services({ setActiveLink, setContactFormOpen }) {
+function Services({ setActiveLink }) {
 	const services = useRef();
 
 	useEffect(() => {
@@ -30,9 +30,7 @@ function Services({ setActiveLink, setContactFormOpen }) {
 		observer.observe(services.current);
 	}, [setActiveLink]);
 
-	const onClick = () => {
-		setContactFormOpen(true);
-	};
+	
 
 	return (
 		<>
@@ -87,20 +85,9 @@ function Services({ setActiveLink, setContactFormOpen }) {
 			</div>
 			<div className="page" id="services" ref={services}>
 				<div className="container">
-					<div className="firstResponder">
-						<h2>Are you a First Responder?</h2>
-						<p>
-							I've helped First Responders save <br />
-							<strong>$22,493</strong> to date and counting.
-						</p>
-						<button className="btn" onClick={onClick}>
-							Contact me now!
-						</button>
-						<div className="bg"></div>
-					</div>
+					{/* Service Card Container */}
 					<div className="cardsContainer">
-						<p>What I</p>
-						<h3>Specialize In</h3>
+						<h1>I specialize in</h1>
 						<div className="cards">
 							<div className="servicesCard">
 								<FaFileSignature className="icon" />
@@ -166,7 +153,7 @@ function Services({ setActiveLink, setContactFormOpen }) {
 							</div>
 						</div>
 					</div>
-					<h1>See what others have said about my work</h1>
+					<h1 className='testimonialHeader'>See what others have said about my work</h1>
 					<Testimonials />
 				</div>
 			</div>
