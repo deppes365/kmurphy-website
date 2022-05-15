@@ -9,9 +9,9 @@ function Header({
 	menuActive,
 	setMenuActive,
 }) {
-	const scrollTo = page => {
-		document.getElementById(`${page}`).scrollIntoView({ behavior: 'smooth' });
-	};
+	// const scrollTo = page => {
+	// 	document.getElementById(`${page}`).scrollIntoView({ behavior: 'smooth' });
+	// };
 
 	const onClick = () => {
 		setMenuActive(prevState => !prevState);

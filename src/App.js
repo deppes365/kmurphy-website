@@ -15,7 +15,7 @@ import { FaPhone } from 'react-icons/fa';
 function App() {
 	const [contactFormOpen, setContactFormOpen] = useState(false);
 	const [activeLink, setActiveLink] = useState('');
-	const [navBarSolid, setNavBarSolid] = useState(false);
+	// const [navBarSolid, setNavBarSolid] = useState(false);
 	const [menuActive, setMenuActive] = useState(false);
 
 	useEffect(() => {
@@ -41,7 +41,7 @@ function App() {
 					setContactFormOpen={setContactFormOpen}
 					activeLink={activeLink}
 					setActiveLink={setActiveLink}
-					navBarSolid={navBarSolid}
+					// navBarSolid={navBarSolid}
 					menuActive={menuActive}
 					setMenuActive={setMenuActive}
 				/>

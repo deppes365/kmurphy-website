@@ -24,7 +24,7 @@ function Home({setActiveLink}) {
             <div className="homeContent">
               <div className="homeInfo card">
                 <h1>Kristin Murphy, Mission Realty brokered by eXp Realty</h1>
-                <h3>55+ Homes sold in 2021</h3>
+                <h3>Expert Realtor</h3>
               </div>
               <div className="homeImgContainer">
                 <img src={Headshot} alt="" />

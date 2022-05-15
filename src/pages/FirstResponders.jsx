@@ -42,7 +42,7 @@ function FirstResponders({ setContactFormOpen }) {
 					<div className="content">
 						<h1>Are you a First Responder?</h1>
 						<h3>
-							I've helped First Responders save $22,000 to date when buying
+							I've helped First Responders save $25,000 to date when buying
 							their homes!
 						</h3>
 						<button onClick={() => setContactFormOpen(true)}>
