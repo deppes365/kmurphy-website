@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import FirstResponderPostcard from '../assets/images/first-responder-postcard.jpg';
+// import FirstResponderPostcard from '../assets/images/first-responder-postcard.jpg';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
