@@ -49,9 +49,9 @@ function FirstResponders({ setContactFormOpen }) {
 							Contact me now!
 						</button>
 					</div>
-					<div className="imgContainer">
+					{/* <div className="imgContainer">
 						<img src={FirstResponderPostcard} alt="" />
-					</div>
+					</div> */}
 				</div>
 				<h2>My First Responder Success Stories</h2>
 				<Swiper

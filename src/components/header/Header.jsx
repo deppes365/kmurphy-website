@@ -1,5 +1,6 @@
 import React from 'react';
 import patentLogo from '../../assets/images/patentrealtorlogo-white.png';
+import {Link} from 'react-router-dom' 
 
 function Header({
 	setContactFormOpen,
@@ -31,42 +32,32 @@ function Header({
 						onClick={onClick}
 					>
 						<li>
-							<a
+							<Link
 								className={`navLink ${activeLink === 'home' ? 'active' : ''}`}
-								href="#home"
-								onClick={e => {
-									e.preventDefault();
-									scrollTo('home');
-								}}
+								to='/'
+								
 							>
 								Home
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a
+							<Link
 								className={`navLink ${activeLink === 'about' ? 'active' : ''}`}
-								href="#about"
-								onClick={e => {
-									e.preventDefault();
-									scrollTo('about');
-								}}
+								to='/about'
+								
 							>
 								About
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a
+							<Link
 								className={`navLink ${
 									activeLink === 'services' ? 'active' : ''
 								}`}
-								href="services"
-								onClick={e => {
-									e.preventDefault();
-									scrollTo('services');
-								}}
+								to='/services'
 							>
 								Services
-							</a>
+							</Link>
 						</li>
 						<li>
 							<button
