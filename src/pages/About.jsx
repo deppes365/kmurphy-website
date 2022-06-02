@@ -59,7 +59,9 @@ function About({ setActiveLink }) {
 					</div>
 				</div>
 				<div className="about-video">
-				<div className="video"><ReactPlayer controls='true' url="https://www.youtube.com/watch?v=rWFFsBI2f-g&t=4s&ab_channel=Darren"/></div>
+					<div className="video">
+						<ReactPlayer controls="true" url="https://youtu.be/j4clCm9jHPk" />
+					</div>
 				</div>
 			</div>
 		</div>
