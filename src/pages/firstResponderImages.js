@@ -1,3 +1,4 @@
+import Img0 from '../assets/images/img0.png';
 import Img1 from '../assets/images/img1.jpg';
 import Img2 from '../assets/images/img2.jpg';
 import Img3 from '../assets/images/img3.jpg';
@@ -12,6 +13,9 @@ import Img11 from '../assets/images/img11.jpg';
 import Img12 from '../assets/images/img12.jpg';
 
 export const images = [
+	{
+		img: Img0,
+	},
 	{
 		img: Img1,
 		name: 'Codie & Alex',

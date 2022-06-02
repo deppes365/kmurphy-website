@@ -62,7 +62,7 @@ function FirstResponders({ setContactFormOpen }) {
 					modules={[Navigation, Autoplay, Pagination]}
 					slidesPerView={slidesPerView}
 					spaceBetween={30}
-					autoplay={{ delay: 2500 }}
+					autoplay={{ delay: 3500 }}
 					className="mySwiper"
 				>
 					{images.map((img, i) => {

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import patentLogo from '../../assets/images/patentrealtorlogo-white.png';
-import {Link} from 'react-router-dom' 
+import { Link } from 'react-router-dom';
 
 function Header({
 	setContactFormOpen,
@@ -9,21 +9,23 @@ function Header({
 	menuActive,
 	setMenuActive,
 }) {
-	// const scrollTo = page => {
-	// 	document.getElementById(`${page}`).scrollIntoView({ behavior: 'smooth' });
-	// };
-
 	const onClick = () => {
 		setMenuActive(prevState => !prevState);
 	};
+
+	useEffect(()=> {
+		const currentPage = window.location.href;
+		
+		if(currentPage.includes('about')) {
+			
+		}
+	}, [])
 
 	return (
 		<div className={`header ${navBarSolid ? 'solid' : ''}`}>
 			<div className="container">
 				<div className="logo">
-					<h1>
-						Kristin Murphy
-					</h1>
+					<h1>Kristin Murphy</h1>
 					<img src={patentLogo} alt="" />
 				</div>
 				<div className="navContainer">
@@ -34,8 +36,7 @@ function Header({
 						<li>
 							<Link
 								className={`navLink ${activeLink === 'home' ? 'active' : ''}`}
-								to='/'
-								
+								to="/"
 							>
 								Home
 							</Link>
@@ -43,8 +44,7 @@ function Header({
 						<li>
 							<Link
 								className={`navLink ${activeLink === 'about' ? 'active' : ''}`}
-								to='/about'
-								
+								to="/about"
 							>
 								About
 							</Link>
@@ -54,7 +54,7 @@ function Header({
 								className={`navLink ${
 									activeLink === 'services' ? 'active' : ''
 								}`}
-								to='/services'
+								to="/services"
 							>
 								Services
 							</Link>
