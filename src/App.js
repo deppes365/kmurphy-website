@@ -11,6 +11,7 @@ import ContactForm from './components/contactForm/ContactForm';
 import FirstResponders from './pages/FirstResponders';
 
 import { FaPhone } from 'react-icons/fa';
+import {getCurrentPage} from "./Functions"
 
 function App() {
 	const [contactFormOpen, setContactFormOpen] = useState(false);
@@ -46,11 +47,11 @@ function App() {
 					setMenuActive={setMenuActive}
 				/>
 				<Routes>
-					<Route path="/" element={<Home setActiveLink={setActiveLink} />} />
+					<Route path="/" element={<Home setActiveLink={setActiveLink} getCurrentPage={getCurrentPage}/>} />
 
 					<Route
 						path="/about"
-						element={<About setActiveLink={setActiveLink} />}
+						element={<About setActiveLink={setActiveLink} getCurrentPage={getCurrentPage}/>}
 					/>
 
 					<Route
@@ -58,7 +59,7 @@ function App() {
 						element={
 							<>
 								<FirstResponders setContactFormOpen={setContactFormOpen} />
-								<Services setActiveLink={setActiveLink} />
+								<Services setActiveLink={setActiveLink}/>
 							</>
 						}
 					></Route>

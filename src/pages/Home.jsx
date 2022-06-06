@@ -1,22 +1,27 @@
 import React, {useEffect, useRef} from 'react'
 import Headshot from '../assets/images/headshot.jpg'
+import {getCurrentPage} from "../Functions"
 
 function Home({setActiveLink}) {
   const home = useRef()
 
   useEffect(() => {
-		const observer = new IntersectionObserver(
-			entries => {
-				const entry = entries[0];
-				if (entry.isIntersecting) {
-					setActiveLink('home');
-				}
-			},
-			{ threshold: 0.5 }
-		);
+		// const observer = new IntersectionObserver(
+		// 	entries => {
+		// 		const entry = entries[0];
+		// 		if (entry.isIntersecting) {
+		// 			setActiveLink('home');
+		// 		}
+		// 	},
+		// 	{ threshold: 0.5 }
+		// );
 
-		observer.observe(home.current);
-	}, [setActiveLink]);
+
+		// observer.observe(home.current);
+
+    setActiveLink(getCurrentPage)
+    
+	}, [setActiveLink, getCurrentPage]);
 
   return (
     <div className='page' id='home' ref={home}>

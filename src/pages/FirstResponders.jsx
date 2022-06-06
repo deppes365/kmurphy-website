@@ -67,7 +67,7 @@ function FirstResponders({ setContactFormOpen }) {
 				>
 					{images.map((img, i) => {
 						return (
-							<SwiperSlide
+							<SwiperSlide key={i}
 								style={{
 									backgroundImage: `url(${img.img})`,
 									backgroundSize: 'cover',

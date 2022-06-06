@@ -1,28 +1,32 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import patentLogo from '../../assets/images/patentrealtorlogo-white.png';
 import { Link } from 'react-router-dom';
 
 function Header({
 	setContactFormOpen,
 	activeLink,
-	navBarSolid,
 	menuActive,
 	setMenuActive,
 }) {
+
+	const [page, setPage] = useState(false)
 	const onClick = () => {
 		setMenuActive(prevState => !prevState);
 	};
 
+	
+
 	useEffect(()=> {
-		const currentPage = window.location.href;
-		
-		if(currentPage.includes('about')) {
-			
+		console.log(activeLink);
+		if(activeLink === 'services' || activeLink === 'about') {
+			setPage(true)
+		} else {
+			setPage(false)
 		}
-	}, [])
+	}, [activeLink])
 
 	return (
-		<div className={`header ${navBarSolid ? 'solid' : ''}`}>
+		<div className={`header ${page ? 'active' : ''}`}>
 			<div className="container">
 				<div className="logo">
 					<h1>Kristin Murphy</h1>

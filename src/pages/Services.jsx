@@ -12,23 +12,26 @@ import {
 import { RiFilePaper2Line } from 'react-icons/ri';
 import { GiPayMoney } from 'react-icons/gi';
 import { GoPrimitiveDot } from 'react-icons/go';
+import {getCurrentPage} from "../Functions"
 
 function Services({ setActiveLink }) {
 	const services = useRef();
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(
-			entries => {
-				const entry = entries[0];
-				if (entry.isIntersecting) {
-					setActiveLink('services');
-				}
-			},
-			{ threshold: 0.5 }
-		);
+		// const observer = new IntersectionObserver(
+		// 	entries => {
+		// 		const entry = entries[0];
+		// 		if (entry.isIntersecting) {
+		// 			setActiveLink('services');
+		// 		}
+		// 	},
+		// 	{ threshold: 0.5 }
+		// );
 
-		observer.observe(services.current);
-	}, [setActiveLink]);
+		// observer.observe(services.current);
+
+		setActiveLink(getCurrentPage)
+	}, [setActiveLink, getCurrentPage]);
 
 	
 
