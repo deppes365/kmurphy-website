@@ -21,7 +21,7 @@ function Home({setActiveLink}) {
 
     setActiveLink(getCurrentPage)
     
-	}, [setActiveLink, getCurrentPage]);
+	}, [setActiveLink]);
 
   return (
     <div className='page' id='home' ref={home}>

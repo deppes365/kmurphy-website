@@ -19,7 +19,7 @@ function About({ setActiveLink }) {
 		// observer.observe(about.current);
 
 		setActiveLink(getCurrentPage);
-	}, [setActiveLink, getCurrentPage]);
+	}, [setActiveLink]);
 
 	return (
 		<div className="page" id="about" ref={about}>

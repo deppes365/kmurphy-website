@@ -31,7 +31,7 @@ function Services({ setActiveLink }) {
 		// observer.observe(services.current);
 
 		setActiveLink(getCurrentPage)
-	}, [setActiveLink, getCurrentPage]);
+	}, [setActiveLink]);
 
 	
 
